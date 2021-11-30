@@ -2,14 +2,6 @@ provider "google" {
   
 }
 
-data "terraform_remote_state" "network-name" {
-    backend = "gcs"
-    config = {
-      bucket = "terraform-gcs-backend-state"
-      prefix = "modules/deploy/network/vpc/state"    
-    }
-  
-}
 
 module "firewall_rules" {
   source       = "../../../modules/network/firewall-rules"

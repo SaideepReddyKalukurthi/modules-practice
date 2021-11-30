@@ -3,13 +3,6 @@ provider "google" {
     region = var.region_name 
 }
 
-data "terraform_remote_state" "network-name" {
-    backend = "gcs"
-    config = {
-       bucket = "terraform-gcs-backend-state"
-       prefix = "modules/deploy/network/vpc/state"   
-     }
-}
 module "instance-template" {
     source = "../../../modules/compute-vm/instance-template"
     project-name = var.project_name
