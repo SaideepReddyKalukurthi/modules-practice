@@ -1,0 +1,5 @@
+project_name = "terraform-practice-001"
+region_name = "asia-northeast2"
+machine_type = "n1-standard-1"
+network_name = "default"
+template_name = "kittu"
